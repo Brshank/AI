@@ -1,0 +1,2 @@
+import cv2
+trained_facedata=cv2.CascadeClassifier(haarcascade_frontalface_default.xml)
