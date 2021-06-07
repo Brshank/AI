@@ -1,7 +1,7 @@
 import numpy as np
 import array as arr 
 import cv2
-from numpy.core.fromnumeric import size
+
 
 trained_face_data=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 img=cv2.imread('grp.jpg')
@@ -13,11 +13,9 @@ grayscaled_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 face_coordinates=trained_face_data.detectMultiScale(grayscaled_img)
 # print(len(face_coordinates))
 
-i=0
-while i < len(face_coordinates):
-    (x,y,w,h)=face_coordinates[i]
+for (x,y,w,h) in face_coordinates:
     cv2.rectangle(img, (x,y) , (x+w,y+h),  (0,255,255) , 3)
-    i+=1
+    
 
 
 cv2.imshow('Greyscaled detector',img)
