@@ -13,8 +13,11 @@ grayscaled_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 face_coordinates=trained_face_data.detectMultiScale(grayscaled_img)
 # print(len(face_coordinates))
 
-(x,y,w,h)=face_coordinates[i]
-cv2.rectangle(img, (x,y) , (x+w,y+h),  (0,255,255) , 3)
+i=0
+while i < len(face_coordinates):
+    (x,y,w,h)=face_coordinates[i]
+    cv2.rectangle(img, (x,y) , (x+w,y+h),  (0,255,255) , 3)
+    i+=1
 
 
 cv2.imshow('Greyscaled detector',img)
