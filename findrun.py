@@ -2,6 +2,7 @@ with open("bin.txt", "r") as f:
     findrun=f.read()
 # print(findrun[0])
 ctr=0
+i=0
 int(i)
 for i in findrun:
     if "1"==findrun[i]:
