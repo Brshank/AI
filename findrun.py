@@ -1,6 +1,6 @@
 with open("bin.txt", "r") as f:
     findrun=f.read()
-# print(findrun[0])
+print(findrun)
 ctr=0
 i=0
 int(i)
