@@ -1,3 +1,4 @@
+from collections import Counter
 k=0
 a=0
 b=0
@@ -64,7 +65,8 @@ for a in range(x+1):
     
     
 #************* Logic Ends
-print('-'*52)    
+print('-'*52) 
+print('Number of counts for each char/no. in the .txt=',Counter(fd))   
 #***** to check if findrun is above20 perc:
 if (ctr/(x)*100) >=20:
     print('YES, it has ctrs gr8r than 20%')
