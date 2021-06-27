@@ -1,7 +1,7 @@
 k=0
 a=0
 b=0
-ctr1=1
+ctr1=0
 ctr=0
 
 #**********Read Multiple files with txt *ext* from a dir:
@@ -27,6 +27,7 @@ with open("bin.txt", "r") as f:
 run=int(input("how many runs for 1's do u want="))
 x=int(len(findrun)-(run-1))
 print('x=',x)
+print('run=',run)
 #********* string to integer list *******
 
 fd=list(findrun.split())
@@ -38,8 +39,10 @@ print(type(fd))
 #******LOGIC STARTS*********
 
 
-print('|\t','a','|\t','b','|','k','|','fd[k]','|  ','ctr','| ','ctr1','|\t')
-print('-'*43)
+print('|\t','a','|\t','b','|','  k ','|',' fd[k]','|  ','ctr','|','ctr1','|\t')
+print('-'*52)
+
+
 for a in range(x+1):
     for b in range(run):
         print('|\t',a,'|\t',b,'|\t',k,'|\t',fd[k],'|\t',ctr,'|   ',ctr1,'|\t')
@@ -59,7 +62,7 @@ for a in range(x+1):
     
     
 #************* Logic Ends
-    
+print('-'*52)    
 #***** to check if findrun is above20 perc:
 if (ctr/(x)*100) >=20:
     print('YES, it has ctrs gr8r than 20%')
