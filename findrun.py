@@ -54,6 +54,8 @@ for a in range(x+1):
             else:
                 ctr1=0
                 continue
+        
+
     if b==run-1:
         k+=1   
     #for b, k in zip(range(run), range(x)):
