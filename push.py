@@ -23,11 +23,11 @@ def display():
 while True:
     pushbtn=input('Do you want to press the Button(y/n),Display(d) or reset(r) the counter=')  #button
     
-    if pushbtn=='y' or 'Y':
+    if pushbtn=='y' :
         pushed()
-    elif pushbtn=='r'or 'R':
+    elif pushbtn=='r':
         reset()
-    elif pushbtn=='d'or 'D':
+    elif pushbtn=='d':
         display()
     else:
         exit()

@@ -1,46 +1,54 @@
 #include<iostream>
 using namespace std;
-int length;
+int arr[]={1,5,2,2,6,8,9,0};
+int len = (sizeof(arr)/sizeof(arr[0]));
 
-void MakeArray(){
-    cout<<"Enter d length for the 1d array ="<<endl;
-    cin>>length;
-    cout<<"Enter d values="<<endl;
-    for(int i=0;i<length;i++)
-        {
-        cin>>array[i];
-        }
-    cout<<"Array created"<<endl;
+void InsertValues(){
+  int n;
+  int index;
+  cout<<"Enter the Index Number To Insert Value into:";
+  cin>>index;
+  cout<<"Enter value of numerical to be inserted="<<endl;
+  cin>>n;
+
+  for (int i = len-1; i >= index; i--){
+    arr[i+1]=arr[i];
+    }
+  arr[index]=n;
+  
 }
-void DisplayArray(){
-for (int i=0;i<length;i++)
-    {
-    cout<<array[i]<<", ";
+
+void DeleteValues()
+{  
+  cout<<"Enter the Index Number To Delete Value :";
+  int index;
+  cin>>index;
+  
+  if(index <0 || index > 7)
+  {
+    cout<<"Index inputted is out of range try(0-7)"<<endl;
+    DeleteValues(); //for user to try Again
+  }
+  else
+  {for (int i = index; i <len; i++){
+    arr[i]=arr[i+1];
     }
-cout<<"]";
-}
-void DeleteValues(){
-    cout<<"Enter the Index Number To Delete Value :";
-    int index;
-    cin>>index;
-    if(index <0 ||index > length)
-    {
-        cout<<"Invalid Index Entered-> Valid Range(0-9)"<<endl;
-        DeleteValues();// Recall The Function it self
-    }
-    else
-    {
-        array[index]=-1;
-    }
-    cout<<"\n\t\t\tArray Value Deleted...  Successfully "<<endl;
+    cout<<"after deletion"<<endl;   
+    cout<<"[";
+    //displaying
+    for (int i = 0; i < len; i++) {
+      cout<<arr[i]<<"  ";}
+      cout<<"]";
+
+  }
+  cout<<"*@#\t Array Value Deleted\t*@#"<<endl;
 }
 int main()
-{int sum=0;
-int arr[]={1,5,2,2,6,8,9,0};
+{
+int sum=0;
 int max=arr[0];
 int min=arr[0];
 
-int len = (sizeof(arr)/sizeof(arr[0]));
 for (int i = 0; i < len; i++)
 {
     if (arr[i] > max){
@@ -67,24 +75,17 @@ cout<<"The min number of the 1d array \t="<<min<<endl;
 
 
 
+
+
 cout<<"*******************************"<<endl;
 //iii.	Insert and delete an element in an array (by passing array to the function)
-cout<<"(ii)Third Part starts"<<endl;
-cout<<"The 1d array is as follows \t="<<"[";
-for (int i = 0; i < len; i++)
-{
-    cout<<arr[i]<<", ";
-}
-cout<<"]";
+cout<<"(iii)Third Part starts"<<endl;
 
+//************INSERTION 
+InsertValues();
 
-
-
-    
-
-
-
-
+//**********DELETION
+DeleteValues();
 
 return 0;
 }
