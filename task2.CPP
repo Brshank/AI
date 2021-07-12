@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 int arr[]={1,5,2,2,6,8,9,0};
 int len = (sizeof(arr)/sizeof(arr[0]));
 
