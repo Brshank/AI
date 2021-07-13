@@ -10,28 +10,28 @@ private:
     int *data;
 
 public:
-    node() //method
+    node() //method for making a constructor
     {
-        size = 0;
+        size = 0;   
         capacity = 5;
         data = new int[capacity];  //[0,0,0,0,0,0,0,0,0,0]
     }
     void insertValue(int number);
     void InsertatIndex(int number, int index);
     void deleteValueAtIndex(int index);
-    string to_str();
-    ~node() 
+    string to_str();        //returns array as string from the library
+    ~node()                 //destructor
     {
         delete[] data;
     }
 };
 
-void node::insertValue(int number)
+void node::insertValue(int number)      //function for inserting the value inside an array
 {
-    if (size == capacity)
+    if (size == capacity)           //for dynamically allocation of the space of the array
     {
-        capacity = capacity + 1;
-        int *copyData = new int[capacity];
+        capacity += 1;
+        int *copyData = new int[capacity];          //temporary copydata[0] --> copydata[6]
         for (int i = 0; i < capacity; i++)
         {
             copyData[i] = data[i];
@@ -49,7 +49,7 @@ void node::insertValue(int number)
         }
         delete[] copyData;
     }
-    else
+    else        //within the limits of the capacity insert values in array
     {
         data[size] = number;
         size++;
@@ -58,7 +58,7 @@ void node::insertValue(int number)
 
 void node::InsertatIndex(int index,int number)
 {
-    if (index>=size || index <0 ){
+    if (index>=size || index <0 ){  
         cout<<"---BEWARE--->Invalid Index";
     }
     if (size == capacity)
@@ -87,21 +87,22 @@ void node::InsertatIndex(int index,int number)
     }
     else
     {
-        int *copyData = new int[capacity];
+        int *copyData = new int[capacity];  //temp array copyData
         for (int i = 0; i < index; i++)
         {
             copyData[i] = data[i];
         }
+
         copyData[index] = number;
-        for (int j = index + 1; j < capacity; j++)
-        {
+        for (int j = index + 1; j < capacity; j++)  //copying values to the right of the index into the temp array 
+        {                               
             copyData[j] = data[j - 1];
         }
         delete[] data;
         data = new int[capacity];
         for (int k = 0; k < capacity; k++)
         {
-            data[k] = copyData[k];
+            data[k] = copyData[k];      //copying from copyData to  data array
         }
         delete[] copyData;
         size++;
@@ -136,7 +137,7 @@ void node::deleteValueAtIndex(int index)
     }
 }
 
-string node :: to_str()
+string node :: to_str()  //returns array as a string
 {
     if (size == 0)
     {
