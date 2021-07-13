@@ -1,9 +1,14 @@
-cout<<"The image width is "<<img.width()<<endl;
-    // cout<<"The image height is "<<img.height()<<endl;
-    
-    // img.clear(77);
-    // img.display();
+//DELETION
+int index=3;
+for (int i = index; i <len-1; i++){
+    arr[i]=arr[i+1];
+    }
 
-    // cout<<"Image at this pixel is"<<img.getItem(3,3)<<endl; // will return the value at the particular index    PASS
-    // cout<<"Image at this pixel is"<<img.getItem(-2,-2)<<endl; // will return the value at the particular index  PASS
-    // cout<<"Image at this pixel is"<<img.getItem(8,8)<<endl;  //will recieve error on purpose                    FAIL
+cout<<"after deletion"<<endl;    
+cout<<"[";
+for (int i = 0; i < len-1; i++)
+{
+    cout<<arr[i]<<"  ";
+}
+cout<<"]";
+
