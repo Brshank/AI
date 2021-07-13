@@ -58,8 +58,9 @@ void node::insertValue(int number)
 
 void node::InsertatIndex(int index,int number)
 {
-    // [0,0,0,0,0,0,0,0,0,0] //data
-    // [0,0,1,0,0,0,0,0,0,0,0] //copydata insert at second index
+    if (index>=size || index <0 ){
+        cout<<"---BEWARE--->Invalid Index";
+    }
     if (size == capacity)
     
     {
