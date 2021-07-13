@@ -84,6 +84,10 @@ cout<<"(iii)Third Part starts"<<endl;
 
 //************INSERTION 
 InsertValues();
+for (int i = 0; i < len; i++)
+{
+  cout<<arr[i];
+}
 
 //**********DELETION
 DeleteValues();

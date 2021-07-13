@@ -111,15 +111,15 @@ int main()
     GrayscaleImage img(5,5);
     img.display();
     cout<<endl;
-    // cout<<"The image width is "<<img.width()<<endl;
-    // cout<<"The image height is "<<img.height()<<endl;
+    cout<<"The image width is "<<img.width()<<endl;
+    cout<<"The image height is "<<img.height()<<endl;
     
-    // img.clear(77);
-    // img.display();
+    img.clear(77);
+    img.display();
 
-    // cout<<"Image at this pixel is"<<img.getItem(3,3)<<endl; // will return the value at the particular index    PASS
-    // cout<<"Image at this pixel is"<<img.getItem(-2,-2)<<endl; // will return the value at the particular index  PASS
-    // cout<<"Image at this pixel is"<<img.getItem(8,8)<<endl;  //will recieve error on purpose                    FAIL
+    cout<<"Image at this pixel is"<<img.getItem(3,3)<<endl; // will return the value at the particular index    PASS
+    cout<<"Image at this pixel is"<<img.getItem(-2,-2)<<endl; // will return the value at the particular index  PASS
+    cout<<"Image at this pixel is"<<img.getItem(8,8)<<endl;  //will recieve error on purpose                    FAIL
     img.setItem(3,3,69);
     img.display();
     img.setItem(3,3,-300); // Will automatically suppress the value at put the min
