@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
 class Stack{
-    public:
     int top;
     int len = sizeof(arr)/sizeof(arr[0]) ;
+   
+    public:
     Stack(){
         top=-1;    //Constructor
     }
@@ -11,8 +12,8 @@ class Stack{
     void push(int );
     void pop();
     void display();
-    // int top();
-    // int isEmpty();
+    int PostfixEvaluation(Stack s);
+    
     };
 void Stack::push(int push)
 {
