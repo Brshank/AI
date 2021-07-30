@@ -19,29 +19,31 @@ def TimeComplexity(x,algor):
     else:
         print('Wrong input fot time Factor')
     
-    if algor == 'sqrootn':
-        print(time**2)
+    if algor == 'logn':
+        print(format(np.exp(time),'E'))
+    elif algor == 'sqrootn':
+        print(format(time**2,'E'))
     elif algor =='n':
-        print(time)
+        print(format(time,'E'))
     elif algor =='nlogn':
         n=1
         while n*np.log2(n) < time:
             n+=100
-        print(n-100)
+        print(format((n-100),'E'))
     elif algor =='n^2':
-        print(np.sqrt(time))
+        print(format(np.sqrt(time),'E'))
     elif algor =='n^3':
-        print(np.cbrt(time))
+        print(format(np.cbrt(time),'E'))
     elif algor =='2^n':
-        print(np.log2(time))
+        print(format(np.log2(time),'E'))
     elif algor =='n!':
+        # print(format(np.math.factorial(time),'E'))
         print(np.math.factorial(time))
     else:
         print('Wrong algo input')
 
 
-x=input("enter second,minute,hour,day,month,year,century:::=")
+x=input("enter second, minute, hour, day, month, year, century :::=")
 x=x.lower()
-print(x)
 algor=input("Enter logn, sqrootn, n, nlogn, n^2, n^3, 2^n, n!::=")
 TimeComplexity(x,algor)
