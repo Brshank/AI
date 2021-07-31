@@ -7,12 +7,8 @@ class Cricket_Ranking
     int arrb[3]; //player b 
     int suma=0;
     int sumb=0;
-    int x;
     void CR()
     { 
-        cin>>x;
-        for (int i = 0; i < x; i++)
-        {
             for (int A = 0; A < 3; A++)
             {
                 cin>>arra[A];
@@ -25,9 +21,12 @@ class Cricket_Ranking
                 sumb+=arrb[B];
             }
 
-            if (suma>sumb)
+    }
+void Compare()
+{
+     if (suma>sumb)
             {
-               A-> matrix 
+               cout<<"A"<<endl; 
             }
             else
             {
@@ -35,16 +34,24 @@ class Cricket_Ranking
             }
             suma=0;
             sumb=0;
-            
-        }
-    
-    }
-
+}
 
 };
 
-int main(){
-    Cricket_Ranking comp;
-    comp.CR();
+int main()
+{
+    unsigned int x;
+    cin>>x;
+    Cricket_Ranking comp[x];
+    for (int i = 0; i < x; i++)
+    {
+        comp[i].CR(); //components p[layeres]
+        
+    }
+    for (int r = 0; r < x; r++)
+    {
+        comp[r].Compare();
+    }
+    
     return 0;
 }
