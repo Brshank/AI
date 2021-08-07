@@ -1,14 +1,16 @@
 #include <iostream>
+#include<algorithm>
 using namespace std;
-void FCFS()
+void SJF()
 {
     float average_TAT=0.0, average_WT=0.0;
     int number=0,CompileTime=0,ArrivalTime=0,BurstTime=0,TurnAroundTime=0,WaitingTime=0;
     int sum1=0,sum2=0;
-    cout<<"First Come First Serve (FCFS), Non Preemptive:\n";
+    cout<<"SJF (Shortest Job First), Non Preemptive:\n";
     cout<<"Enter the Number of processes: ";
     cin>>number; 
     int arr[number][6]={0}; 
+    //For inputting the values in the Gantt Chart!
     for(int i=0;i<number;i++)
     {
         cout<<"Process "<<i+1<<":"<<endl;
@@ -23,13 +25,13 @@ void FCFS()
     
     for(int i=0;i<number;i++)
     {
-        if(i==0)
+        if(i==0)    //if only one process CT=BT
         {
             arr[i][3]=arr[i][2];
         }
         else
         {
-            if(arr[i][1]<=arr[i-1][3])
+            if(arr[i][1]<=arr[i-1][3])  //AT<=CT of prev process
             {
                 arr[i][3]=arr[i-1][3]+arr[i][2];
             }
@@ -65,11 +67,11 @@ void FCFS()
     cout<<endl;
     
     // Display the Table
-    cout<<"|No"<<"   |   "<<"AT"<<"    |    "<<"BT"<<"    |    "<<"CT"<<"    |    "<<"TAT"<<"    |    "<<"WT"<<"\n";
+    cout<<"|No"<<"   |   "<<"AT"<<"    |    "<<"BT"<<"    |    "<<"CT"<<"    |    "<<"TAT"<<"    |    "<<"WT"<<"    |    "<<"RT"<<endl;
     for(int i=0;i<number;i++)
     {
         cout<<"_____________________________________________________________"<<endl;
-        cout<<"|"<<arr[i][0]<<"    |    "<<arr[i][1]<<"    |    "<<arr[i][2]<<"    |    "<<arr[i][3]<<"    |      "<<arr[i][4]<<"    |    "<<arr[i][5]<<"\n";
+        cout<<"|"<<arr[i][0]<<"    |    "<<arr[i][1]<<"    |    "<<arr[i][2]<<"    |    "<<arr[i][3]<<"    |      "<<arr[i][4]<<"    |    "<<arr[i][5]<<"    |    "<<arr[i][5]<<endl;
     }
     
     cout<<endl;
@@ -77,9 +79,11 @@ void FCFS()
     average_WT=(float)sum2/(float)number;
     cout<<"Average Turn Around Time: "<<average_TAT<<endl;
     cout<<"Average Waiting Time: "    <<average_WT<<endl;
+   
+    
 }
 int main()
 {
-    FCFS();
+    SJF();
     return 0;
 } 

@@ -7,6 +7,7 @@ class Cricket_Ranking
     int arrb[3]; //player b 
     int suma=0;
     int sumb=0;
+    int count=0;
     void CR()
     { 
             for (int A = 0; A < 3; A++)
@@ -24,16 +25,15 @@ class Cricket_Ranking
     }
 void Compare()
 {
-     if (suma>sumb)
-            {
-               cout<<"A"<<endl; 
-            }
-            else
-            {
-                cout<< "B"<<endl;
-            }
-            suma=0;
-            sumb=0;
+     for(int i=0;i<3;i++){
+        if(arra[i]>arrb[i])
+        count++;
+        }
+        if(count>1)
+        cout<<'A'<<endl;
+        else
+        cout<<'B'<<endl;
+        
 }
 
 };
