@@ -11,7 +11,7 @@ struct node{
 }a[100],b[100],c[100];
 void insert(int n){
     int i;
-	cout<<"Pno\tAT\tBT "
+	cout<<"Pno\tAT\tBT ";
     for(i=0;i<n;i++){
 		cout<<"For="<<i+1<<" process"<<endl;
         cin>>a[i].pname;
@@ -104,7 +104,7 @@ void disp(int nop,int qt){
     float averageWaitingTime=0;
     float averageResponseTime=0;
     float averageTAT=0;
-        cout<<"\nGantt Chart\n";
+        cout<<"\n>--------Gantt Chart------<\n";
     rtime=0;
     for (i=0; i<k+1&&i<20; i++){
         if(i!=k)
@@ -146,9 +146,9 @@ void disp(int nop,int qt){
 }
 int main(){
     int nop,choice,i,qt;
-    cout<<"Enter number of processes\n";
+    cout<<"Enter number of processes==";
     cin>>nop;
-    cout<<"Enter time quantum\n";
+    cout<<"\nEnter time quantum==";
     cin>>qt;
     insert(nop);
     disp(nop,qt);
