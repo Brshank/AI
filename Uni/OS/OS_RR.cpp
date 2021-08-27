@@ -140,9 +140,9 @@ void disp(int nop,int qt){
         averageResponseTime+=a[i].restime-a[i].atime;
         cout <<"\n"; 
     }
-    cout<<"Average Response time: "<<(float)averageResponseTime/(float)n<<endl;
-    cout<<"Average Waiting time: "<<(float)averageWaitingTime/(float)n<<endl;
-    cout<<"Average TA time: "<<(float)averageTAT/(float)n<<endl;
+    cout<<"Average Response time: "<<(float)averageResponseTime/(float)n<<"ms"<<endl;
+    cout<<"Average Waiting time: "<<(float)averageWaitingTime/(float)n<<"ms"<<endl;
+    cout<<"Average TA time: "<<(float)averageTAT/(float)n<<"ms"<<endl;
 }
 int main(){
     int nop,choice,i,qt;
