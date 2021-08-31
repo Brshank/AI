@@ -28,7 +28,7 @@ template<typename T>
             {   
                 T node = q.front();
                 q.pop();
-                cout<<node<<" ";
+                cout<<node<<"--> ";
 
                 for(T neighbor:l[node]){
                     if (!visited[neighbor])
