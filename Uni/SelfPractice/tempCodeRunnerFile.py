@@ -16,4 +16,5 @@ x=(x1-Start)/(End-Start)
 prediction=(x*(End2-Start2)) +Start2
 
 
-print('So the Predicted number that will lie in the range is=='+prediction)
+print('So the Predicted number that will lie in the range is==')
+print(prediction)
