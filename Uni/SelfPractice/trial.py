@@ -1,4 +1,3 @@
-
 print('Please Give the Range==(Start,End)')
 Start=int(input('Start=='))
 End=int(input('End=='))
