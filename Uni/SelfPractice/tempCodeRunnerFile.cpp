@@ -1,2 +1,2 @@
-fabs(x3);
-// fabs(y3);
+{   
+        cout<<""<<ele<<" ";

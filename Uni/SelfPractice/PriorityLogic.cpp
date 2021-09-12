@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include<stdlib.h>
 using namespace std;
 class Logic
 {
@@ -50,12 +51,15 @@ public:
     //Adjacency List for all Nodes
     vector<int> adjList[37] = {l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30, l31, l32, l33, l34, l35, l36};
     
-    int pos[2] = {35, 21};  //Detective Postions here (D1,D2)
+    int Xpos;
+    int pos[2] = {};  //Detective Postions here (D1,D2)
     int priority[37] = {0};  //Priority of each Node
 
     //Function for Updatinig The Priority Layer Wise:
     void updatePriority()
     {
+        priority[37]={0};
+
         for (int i = 0; i < 2; i++)
         {
           layering(pos[i]);
@@ -118,10 +122,96 @@ public:
         }
         cout << m << ":" << max << endl;
     }
+    void AssignPos()
+    {   int p1,p2,p3;
+        int max=37;
+        while (true)
+        {
+            p1=rand()%max;
+            p2=rand()%max;
+            p3=rand()%max;
+            if (p1==p2|| p2==p3 || p3==p1) continue;
+            else
+            {
+                pos[0]=p1;
+                pos[1]=p2;
+                int Xpos=p3;
+                break;
+            }
+           
+       }
+            cout<<"The  Position of police(1) is-::"<<pos[0]<<endl;
+            cout<<"The  Position of police(2) is-::"<<pos[1]<<endl;
+            cout<<"The  Position of Mr. X is-::"<<Xpos<<endl;
+//Now After assigning it for the first time 
+    }
+
+void UpdatePolicePos()
+{   
+    // int nxtNeighbours[];
+    //police (1&2)
+    
+    for (int i = 0; i < 2; i++)
+    {
+        int choice=adjList[pos[i]][rand()%adjList[pos[i]].size()];
+        // cout<<"The choice is ::"<<choice;
+        pos[i]=choice;
+    }
+    
+    
+}
+bool PoliceCaughtmrX()
+{
+//if x has been caught ?
+
+for (int i = 0; i < 2; i++)
+    {
+        if(pos[i]==Xpos){
+            return true;
+        }
+    }
+    return false;
+
+}
+
+
+void updateXpos()
+{
+//updates the pos of Mr. X
+int choice1= ;
+}
+
+
+void printPos()
+{
+// prints the updated postion
+cout<<"The Updated Position of police(1) is-::"<<pos[0]<<endl;
+cout<<"The Updated Position of police(2) is-::"<<pos[1]<<endl;
+cout<<"The Updated Position of Mr. X is-:::"<<Xpos<<endl;
+}
+    
+    
+    void GameLoop()
+    {
+        AssignPos();
+        while (!PoliceCaughtmrX())
+        {
+            updatePriority();
+            updateXpos();
+            UpdatePolicePos();
+            printPos();
+
+        }
+    }
+
 };
+
+
+
 int main()
 {
     Logic one;
-    one.updatePriority();
-    one.print();
+    one.GameLoop();
+
+    
 }
