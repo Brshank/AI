@@ -76,7 +76,7 @@ public:
         {
             int current = readyQueue.front();
             readyQueue.pop();
-            cout << current << endl;
+            // cout << current << endl;
             for (auto x : adjList[current])
             {
                 if (!visited[x])
@@ -85,12 +85,12 @@ public:
                     readyQueue.push(x);
                     visited[x] = 1;
                     p[x] = p[current] + 1;
-                    cout << x << " " << p[x] << endl;
+                    // cout << x << " " << p[x] << endl;
                 }
             }
         }
     
-        cout << "***********************" << endl;
+        // cout << "***********************" << endl;
         for (int i = 0; i < 37; i++)
         {
             priority[i] += p[i];
@@ -142,7 +142,7 @@ public:
        }
             cout<<"The  Position of police(1) is-::"<<pos[0]<<endl;
             cout<<"The  Position of police(2) is-::"<<pos[1]<<endl;
-            cout<<"The  Position of Mr. X is-::"<<Xpos<<endl;
+            cout<<"The  Position of Mr. X is-::"    <<Xpos<<endl;
 //Now After assigning it for the first time 
     }
 
@@ -175,12 +175,23 @@ for (int i = 0; i < 2; i++)
 }
 
 
+
+
 void updateXpos()
 {
 //updates the pos of Mr. X
-int choice1= ;
+int max=0;
+int maxPos=0;
+for(auto x:adjList[Xpos])
+{
+    if(priority[x]>max)
+    {
+        max=priority[x];
+        maxPos=x;
+    }
 }
-
+Xpos=maxPos;
+}
 
 void printPos()
 {
