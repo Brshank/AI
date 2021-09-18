@@ -1,6 +1,6 @@
 data segment
-num1 dw 81h
-num2 dw 34h
+num1 dw 73h
+num2 dw 84h
 prodl dw ?
 prodh dw ?
 data ends
