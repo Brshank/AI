@@ -11,14 +11,14 @@ class Process{
 
         int remainingTime;
 
-		int responseTime;
+        int responseTime;
         int completionTime;
-    
+
         int waitingTime;
         int turnAroundTime;
 
         void initialize(){
-        	remainingTime = burstTime;
+            remainingTime = burstTime;
         }
 };
 
