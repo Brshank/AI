@@ -1,6 +1,6 @@
 data segment
-num1 db 81h
-num2 db 34h
+num1 db 35h
+num2 db 46h
 result dw ? 
 ;define byte also== result db 00h
 data ends
