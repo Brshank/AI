@@ -1,67 +1,84 @@
-void mergeSort(float a[], int first, int last) {
-     //Function performs a mergeSort on an array for indices first to last
+#include<iostream>
+using namespace std;
+class MgSort
+{
+public:
+void mergeSort(int a[], int low, int high) {
+     //Function performs a mergeSort on an array for indices low to high
      int mid;
      //if more than 1 element in subarray
-     if(first < last){
-              mid =(first + last) / 2;
+     if(low < high){
+              mid =(low + high) / 2;
               //mergeSort left half of subarray
-              mergeSort(a, first, mid);
+              mergeSort(a, low, mid);
               //mergeSort right half of subarray
-              mergeSort(a, mid+1, last);
+              mergeSort(a, mid+1, high);
               //merge the 2 subarrays
-              merge(a, first, mid, last);
+              merge(a, low, mid, high);
               }
 }
 
 
 
-void merge(float a[], int first, int mid, int last){
-     //Function to merge sorted subarrays a[first -> mid] and 
-     //a[(mid+1)-> last] into a sorted subarray a[first->last]
+void merge(int arr[], int low, int mid, int high)
+{
+    int n1 = mid-low+1;
+    int n2 = high - mid;
 
-     int ndx1; 
-     int ndx2;
-     int last1;
-     int last2;
-     int i;
-     ndx1 = first;
-     last1 = mid;
-     ndx2 = mid + 1;
-     last2 = last;
-     i = 0;
+    int a[n1];
+    int b[n2];  //temporary arrays 
 
-     //Allocate temporary array with same size as a[first, last]
-     float temp[SIZE];
+    for(int i=0;i<n1;i++)
+    {
+        a[i]=arr[low+i];
+    }
 
-     while((ndx1 <= last1) && (ndx2 <= last2)){
-                 if(a[ndx1] < a[ndx2]) {
-                            temp[i] = a[ndx1];
-                            ndx1 = ndx1 + 1;
-                            i++;
-                            }
-                 else{
-                      temp[i] = a[ndx2];
-                      ndx2 = ndx2 + 1;
-                      i++;
-                      }
-     }
+    for(int i=0;i<n2;i++)
+    {
+        b[i]=arr[mid+1+i];
+    }
 
-     while(ndx1 <= last1){
-                temp[i] = a[ndx1];
-                ndx1 = ndx1 + 1;
-                i++;
-                }
-
-     while(ndx2 <= last2){
-                temp[i] = a[ndx2];
-                ndx2 = ndx2+1;
-                i++;
-                }
-
-     int j;           
-     i = 0;
-    for(j = first; j <= last; ++j) {
-        a[j] = temp[i++];
+    int i=0;
+    int j=0;
+    int k=low;
+    while(i<n1 && j<n2)
+    {
+        if(a[i]<b[j])
+        {
+            arr[k]=a[i];
+            k++; i++;
         }
+        else
+        {
+            arr[k]=b[j];
+            k++; j++;
+        }
+    }
 
-}         
+    while(i<n1)
+    {
+        arr[k]=a[i];
+        k++; i++;
+    }
+
+    while(j<n2)
+    {
+        arr[k]=b[j];
+        k++; j++;
+    }
+}
+
+};
+
+int main()
+{ 
+     MgSort m;
+    int arr[]={-8, 5, 1, 0, 5, 26, 47, 10,99, 23,32};
+    m.mergeSort(arr,0,12);
+    for(int i=0;i<11;i++)
+    {
+        cout<<arr[i]<<",";
+    }
+    cout<<endl;
+    return 0;
+}
