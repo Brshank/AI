@@ -59,13 +59,17 @@ int main()
 
 void print(int arr[], int n)
 {
-cout <<"{";
-for (int i = 0; i < n; i++) {
-if (i + 1 != n)
-cout << arr[i] ;
-cout<<",";
-else
-cout << arr[i];
-}
-cout << "}";
+    cout <<"{";
+    for (int i = 0; i < n; i++)
+    {
+        if (i + 1 != n)
+            {
+            cout << arr[i] ;
+            cout<<",";
+            }
+        else
+            cout << arr[i];
+    }
+    cout << "}";
+
 }
