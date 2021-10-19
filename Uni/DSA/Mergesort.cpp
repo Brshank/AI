@@ -73,7 +73,7 @@ void merge(int arr[], int low, int mid, int high)
 int main()
 { 
      MgSort m;
-    iint arr[]={-8,5,1,0,5,26,47,10,99,23,32};
+    int arr[]={-8,5,1,0,5,26,47,10,99,23,32};
     m.mergeSort(arr,0,12);
     for(int i=0;i<11;i++)
     {

@@ -2,18 +2,22 @@
 #include <queue>
 #include <vector>
 #include <ctime>
-#include <cstdlib>
 #include <stdlib.h>
+#include <windows.h>
 using namespace std;
 
 class Logic 
 {
 private:
+
   int mrXPos;
   int mrXVisible=-1;
   int turnNumber;
   bool gameEnd=false;
-public:  //All connected nodes of graph are given below
+public:  
+    int LoseCtr=0;
+    int WinCtr=0;
+    //All connected nodes of graph are given below
     vector<int> l0 =  {1, 35, 36}; 
     vector<int> l1 =  {0, 2, 8};
     vector<int> l2 =  {1, 6, 3};
@@ -33,9 +37,9 @@ public:  //All connected nodes of graph are given below
     vector<int> l16 = {15, 17, 18};
     vector<int> l17 = {11, 14, 16};
     vector<int> l18 = {9, 11, 16, 19};
-    vector<int> l19 = {18, 20};
+    vector<int> l19 = {18, 20, 21};
     vector<int> l20 = {19, 21, 22, 30};
-    vector<int> l21 = {20};
+    vector<int> l21 = {19, 20};
     vector<int> l22 = {20, 23};
     vector<int> l23 = {22, 24};
     vector<int> l24 = {23, 25};
@@ -55,7 +59,7 @@ public:  //All connected nodes of graph are given below
     vector<int> adjList[37] = {l0, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, l14, l15, l16, l17, l18, l19, l20, l21, l22, l23, l24, l25, l26, l27, l28, l29, l30, l31, l32, l33, l34, l35, l36};
     vector <int> DetectivePos = {-1,-1};// detective's initial location 
     int priority[37] = {0}; //all priority are set to false
-    void updateKeyValues() //function of updating detective's position
+  void updateKeyValues() //function of updating detective's position
     {
         for (int i = 0; i < 2; i++)
         {
@@ -83,7 +87,7 @@ public:  //All connected nodes of graph are given below
                 }
             }
         }
-        //cout << "*********" << endl;
+        //cout << "***********************" << endl;
         for (int i = 0; i < 37; i++)
         {
             priority[i] += p[i];//here we are adding the indivisual genrated layers to the over all hueristic
@@ -95,18 +99,18 @@ public:  //All connected nodes of graph are given below
   void gameStart() //function by which our game starts.
   {
     turnNumber=1;//initializing turn number to 1
-    int a=0, b=0, c=0;//temporary variables
+    int temp1=0, temp2=0, temp3=0;//temporary variables
    do
     {      
       srand(time(0));  // Initialize random node generator for all the 3 players(initializing the seed with a number from the time so as to keep the genration totaly random)
-      a=rand() % 37;   // %number indicates the max value that can be genrated randomly
-      b=rand() % 37;
-      c=rand() % 37;
+      temp1=rand() % 37;   // %number indicates the max value that can be genrated randomly
+      temp2=rand() % 37;         //it will generate a rand number less than 37 as remainder of xmod37 is less
+      temp3=rand() % 37;
       cout<<endl;
-    } while(a==b || b==c || c==a);//condition to make sure no 2 values are same
-    DetectivePos[0]=a;
-    DetectivePos[1]=b;
-    mrXPos=c;
+    } while(temp1==temp2 || temp2==temp3 || temp3==temp1);//condition to make sure no 2 values are same
+    DetectivePos[0]=temp1;
+    DetectivePos[1]=temp2;
+    mrXPos=temp3;
     gameLoop();
     
   }
@@ -114,57 +118,58 @@ public:  //All connected nodes of graph are given below
   { 
       int choose=-1;//defining to an impossible situation
       int value=0;
-      for(auto y: adjList[mrXPos])//itrating over possible values mr.X can traverse to
+      for(auto y: adjList[mrXPos])
       { 
-        if(priority[y]>value && priority[y]>0)//condition to check if move is valid and better then the other options
+        if(priority[y]>value && priority[y]>0)//condition to check if move is valid and better then the other options [MAX]
         {
-          value =priority[y];//updating max
+          value =priority[y];
           choose=y;
         }
       }
-      if (choose == -1)//the case where mr.X had moves where he is caught
+      if (choose == -1)//the case where mr.X can only walk into a detective where he is caught
       {
-        cout<<"Mr.X was caught no more possible moves";
-        exit(0);
-
+        cout<<"Mr.X was caught at--("<<mrXPos<<") no more possible moves"; //caught in a corner cant move
+        gameEnd=true;
       }
       else
       mrXPos=choose;
   }
-  bool checker(int pos, int current)//checking for the possible moves for the detective to move
+  bool DetectiveChecker(int pos, int current)//checking for the possible moves for the detective to move
   {
     
       for(auto y: DetectivePos)
       {
         if(pos == y)
         {
-          return false;
+          return true;
         }
       }
-      
-    
-    return true;
+    return false;
   }
   void moveDetective() //function which tells us the current and next position of detective and gives us option to select next loaction too
   {
     for(int x=0;x<2;x++)
     {
        int temp=0;
-       cout<<"current position of detective "<<DetectivePos[x]<<endl;
-       cout<<"options to which you can move: ";
+      //  cout<<"current position of detective "<<DetectivePos[x]<<endl;
+      //  cout<<"options to which you can move: ";
        for(auto y: adjList[DetectivePos[x]])
        {
-         if(!checker(y,DetectivePos[x]))
-         cout<<y<<"(Detective) ";
+         if(DetectiveChecker(y,DetectivePos[x]))
+        //  cout<<y<<"(Detective) ";
+         cout<<" ";
          else
-         cout<<y<<" ";
+        //  cout<<y<<" ";
+         cout<<" ";
+
        }
        cout<<endl;
        do
-       {
-   
-        cout<<"please enter your choice"<<endl;
-        cin>>temp;
+       { 
+        // srand(time(0));
+        temp=adjList[DetectivePos[x] ][ rand() % (adjList[DetectivePos[x]].size()) ] ;
+        // cout<<"please enter your choice"<<endl;
+        // cin>>temp;
 
        }while(!validMove(x,temp));
     }
@@ -173,7 +178,8 @@ public:  //All connected nodes of graph are given below
   { 
     bool possibleMove=false;
     bool invalidMove=false;
-    for(auto x:adjList[DetectivePos[current]])
+    
+    for(auto x:adjList[DetectivePos[current]])  //to check if there is any possible move or not
     {
       if(pos==x)
       {
@@ -204,7 +210,7 @@ public:  //All connected nodes of graph are given below
   void revealXPos() // function telling us the current position of Mr. X .
   {
     cout<<"Mr.X was at position:"<<mrXPos<<endl;
-    mrXVisible=mrXPos;
+    // mrXVisible=mrXPos;
   }
   int checkCondition()  //function checking if detective has caught Mr. X or not .
   {
@@ -215,56 +221,74 @@ public:  //All connected nodes of graph are given below
       if(x == mrXPos)
       {
         mrXCaught = true;
+        break;
       }
+    }
       if(turnNumber == 30)
       {
         mrXSurvived=true;
       }
       if(mrXCaught)
       {
-        cout<<"Mr.X was caught in -"<<turnNumber<<"- number of moves"<<endl;
+        cout<<"Mr.X was caught in ("<<turnNumber<<") Number of turns at position::"<<mrXPos<<endl;
+        WinCtr++;
         gameEnd=true;
-        break;
+    
       }
       else if(mrXSurvived)
       {
-        cout<<"30 turns are over Mr.X survived";
+        cout<<"30 turns are over Mr.X survived in ("<<turnNumber<<") Number of turns"<<endl;
+        LoseCtr++;
         gameEnd=true;
-        break;
       }
-    }
+    
     return 0;
   }
-  int gameLoop()
+  void gameLoop()   //basic Game order in which it has to be played
   {
     do
     {
-      cout<<"****** turn "<<turnNumber<<" ******"<<endl;
-      cout<<"current detective pos:";
+      // cout<<"***************** turn "<<turnNumber<<" *****************"<<endl;
+      // cout<<"current detective pos: ";
       for(auto x:DetectivePos)
       {
         cout<<x<<" ";
       }
       cout<<endl;
       
-      updateKeyValues();
+      updateKeyValues(); 
       
       moveX();
       //cout<<"current mr.X postion: "<<mrXPos<<endl;
-      moveDetective();
-      if (turnNumber == 3 || turnNumber == 8 || turnNumber == 13 || turnNumber == 18 || turnNumber == 24)
+      if(!gameEnd)
       {
-        revealXPos();
-      }
-      turnNumber++;
-      
-      checkCondition();
+        moveDetective();
+        if (turnNumber == 3 || turnNumber == 8 || turnNumber == 13 || turnNumber == 18 || turnNumber == 24)
+          {
+            // revealXPos();
+          }
+        
+        
+        checkCondition();}
+        turnNumber++;
     }while(!gameEnd);
-    return 0;
+    cout<<"\n\n\nNumber of Losses ::"<<LoseCtr;
+    cout<<"\n\nNumber of Wins ::"<<WinCtr;
+    return ;
   }
 };
 int main()
-{
+{ 
     Logic one;
+  
+  for (int i = 1; i <= 100; i++)
+  {
+    system("Color F0");
+    // one.gameStart();
+    Sleep(1000);
     one.gameStart();
+    cout<<"\nLoop="<<i;
+  }
+  cout<<endl;
+  cout<<one.LoseCtr ;
 }
