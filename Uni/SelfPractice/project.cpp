@@ -8,6 +8,7 @@ using namespace std;
 
 class Logic 
 {
+  
 private:
 
   int mrXPos;
@@ -106,7 +107,7 @@ public:
       temp1=rand() % 37;   // %number indicates the max value that can be genrated randomly
       temp2=rand() % 37;         //it will generate a rand number less than 37 as remainder of xmod37 is less
       temp3=rand() % 37;
-      cout<<endl;
+      // cout<<endl;
     } while(temp1==temp2 || temp2==temp3 || temp3==temp1);//condition to make sure no 2 values are same
     DetectivePos[0]=temp1;
     DetectivePos[1]=temp2;
@@ -127,7 +128,7 @@ public:
         }
       }
       if (choose == -1)//the case where mr.X can only walk into a detective where he is caught
-      {
+      { WinCtr++;
         cout<<"Mr.X was caught at--("<<mrXPos<<") no more possible moves"; //caught in a corner cant move
         gameEnd=true;
       }
@@ -163,7 +164,7 @@ public:
          cout<<" ";
 
        }
-       cout<<endl;
+      //  cout<<endl;
        do
        { 
         // srand(time(0));
@@ -188,7 +189,7 @@ public:
     }
     if(!possibleMove)
     {
-      cout<<"invalid move please try again"<<endl;
+      // cout<<"invalid move please try again"<<endl;
       return false;
     }
     for(auto x: DetectivePos)
@@ -200,7 +201,7 @@ public:
     }
     if(invalidMove)
     {
-      cout<<"there is a detective at that position"<<endl;
+      // cout<<"there is a detective at that position"<<endl;
       return false;
     }
     DetectivePos[current]=pos;
@@ -209,7 +210,7 @@ public:
   }
   void revealXPos() // function telling us the current position of Mr. X .
   {
-    cout<<"Mr.X was at position:"<<mrXPos<<endl;
+    // cout<<"Mr.X was at position:"<<mrXPos<<endl;
     // mrXVisible=mrXPos;
   }
   int checkCondition()  //function checking if detective has caught Mr. X or not .
@@ -230,7 +231,7 @@ public:
       }
       if(mrXCaught)
       {
-        cout<<"Mr.X was caught in ("<<turnNumber<<") Number of turns at position::"<<mrXPos<<endl;
+        cout<<"\nMr.X was caught in ("<<turnNumber<<") Number of turns at position::"<<mrXPos<<endl;
         WinCtr++;
         gameEnd=true;
     
@@ -252,9 +253,9 @@ public:
       // cout<<"current detective pos: ";
       for(auto x:DetectivePos)
       {
-        cout<<x<<" ";
+        // cout<<x<<" ";
       }
-      cout<<endl;
+      // cout<<endl;
       
       updateKeyValues(); 
       
@@ -272,23 +273,26 @@ public:
         checkCondition();}
         turnNumber++;
     }while(!gameEnd);
-    cout<<"\n\n\nNumber of Losses ::"<<LoseCtr;
-    cout<<"\n\nNumber of Wins ::"<<WinCtr;
+    cout<<"\nNumber of CTR Losses ::"<<LoseCtr;
+    // cout<<"\n\nNumber of Wins ::"<<WinCtr;
+    cout<<"\t\t\t\t";
     return ;
   }
 };
 int main()
 { 
-    Logic one;
-  
-  for (int i = 1; i <= 100; i++)
-  {
     system("Color F0");
-    // one.gameStart();
-    Sleep(1000);
+    Logic one;
     one.gameStart();
-    cout<<"\nLoop="<<i;
-  }
-  cout<<endl;
-  cout<<one.LoseCtr ;
+    cout<<endl;
+    cout<<"WIN CTR::"<<one.WinCtr ;
+  
+  // for (int i = 1; i <= 1; i++)
+  // {
+  //   Sleep(2000);
+  //   one.gameStart();
+  //   cout<<"\nWIN CTR::"<<one.WinCtr;
+  //   cout<<"\nLoop="<<i;
+  // }
+
 }

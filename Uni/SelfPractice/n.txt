@@ -1,0 +1,182 @@
+Number of Losses ::0
+WIN CTR::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o projPS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+ect } ; if ($?) { .\project }
+
+                                                             30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+ect } ; if ($?) { .\project }
+
+                                                                        30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+ect } ; if ($?) { .\project }
+
+                                                                                                    30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                             30 turns are over Mr.X survived in (30) Number of turns       
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                            30 turns are over Mr.X survived in (30) Number of turns        
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                  30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+Mr.X was caught in (9) Number of turns at position::14
+
+Number of CTR Losses ::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                         30 turns are over Mr.X survived in (30) Number of turns
+
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                            30 turns are over Mr.X survived in (30) Number of turns        
+
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+Mr.X was caught in (24) Number of turns at position::27
+
+WIN CTR::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                           Mr.X was caught at--(27) no more possible moves
+Number of CTR Losses ::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                   30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                            30 turns are over Mr.X survived in (30) Number of turns
+Number of CTR Losses ::1
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                        30 turns are over Mr.X survived in (30) Number of turns
+Number of CTR Losses ::1
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+Mr.X was caught in (12) Number of turns at position::19
+Number of CTR Losses ::0
+WIN CTR::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+                                                               Mr.X was caught at--(4) no more possible moves
+Number of CTR Losses ::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                            30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+Mr.X was caught in (15) Number of turns at position::26
+
+Number of CTR Losses ::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                             30 turns are over Mr.X survived in (30) Number of turns       
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Unins are over Mr.X survived in (30) Number of turns  \SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }        
+
+
+                                         30 turns are over Mr.X survived in (30) Number \SelfPractice\" ; if ($?) { g++ project.cpp -o proj
+of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+Mr.X was caught in (11) Number of turns at position::14
+
+Number of CTR Losses ::0
+WIN CTR::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+Number of CTR Losses ::0
+WIN CTR::1                                         cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                          30 turns are over Mr.X survived in (30) Number of turns
+
+WIN CTR::0                                         cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }\AI\Uni\SelfPractice>
+
+                                                                        30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                               30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                     30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                       30 turns are over Mr.X survived in (30) Number of turns
+
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+Mr.X was caught in (6) Number of turns at position::7
+
+WIN CTR::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+Mr.X was caught in (7) Number of turns at position::5
+
+WIN CTR::1
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                            Mr.X was caught at--(17) no more possible moves
+Number of CTR Losses ::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                          30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                       30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice> cd "c:\Users\Negi\Documents\VS\AI\Uni\SelfPractice\" ; if ($?) { g++ project.cpp -o project } ; if ($?) { .\project }
+
+                                                                    30 turns are over Mr.X survived in (30) Number of turns
+
+Number of CTR Losses ::1
+WIN CTR::0
+PS C:\Users\Negi\Documents\VS\AI\Uni\SelfPractice>
