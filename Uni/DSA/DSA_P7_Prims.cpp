@@ -6,17 +6,14 @@ using namespace std;
 class Algo
 {
     public:
-    int V =9;
+    int V =5;
     //the representation of graph in the form of a adjacent matrix
-    int adjMatrix[9][9] = { { 0, 4, 0, 0, 0, 0, 0, 8, 0 },
-                            { 4, 0, 8, 0, 0, 0, 0, 11, 0},
-                            { 0, 8, 0, 7, 0, 4, 0, 0, 2 },
-                            { 0, 0, 7, 0, 9, 14, 0, 0, 0 },
-                            { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
-                            { 0, 0, 4, 14, 10, 2, 0, 0, 0 }, 
-                            { 0, 0, 0, 0, 0, 2, 0, 1, 6 },
-                            { 8, 11, 0, 0, 0, 0, 1, 0, 7 },
-                            { 0, 0, 2, 0, 0, 0, 6, 7, 0 }};
+    int adjMatrix[5][5] = { { 1,1,1,2,1 },
+                            { 1,2,2,1,1},
+                            { 1,3,3,0,1},
+                            { 1,2,2,2,2},
+                            { 1,1,1,1,1},
+                          };
     
 
     int findMin(int key[], bool included[])
@@ -31,7 +28,8 @@ class Algo
     }
     void display(int parent[])
     {   int sum=0;
-        cout<<"Edge \tWeight\n";
+        cout<<"Edge \t\t|Weight\n";
+        cout<<"---------------- -------\n";
         for(int j =0; j<V; j++)
         {
             for (int i = 1; i < V; i++)
@@ -39,11 +37,11 @@ class Algo
                 if(parent[i]==j)
                 {
                     sum+=adjMatrix[i][parent[i]];
-                    cout<<parent[i]<<" - "<<i<<" \t"<<adjMatrix[i][parent[i]]<<" \n";
+                    cout<<parent[i]<<" --> "<<i<<" \t|"<<adjMatrix[i][parent[i]]<<" \n";
                 }
             }
         }
-        cout<<"final price of pipes Rs."<<sum*120;
+        cout<<"The Toatal Monee is=₹"<<sum*120<<endl;
         
     }
     void prims()
@@ -72,8 +70,8 @@ class Algo
 int main()
 {
     
-    Algo one;
-    one.prims();
+    Algo p;
+    p.prims();
  
     return 0;
 }
