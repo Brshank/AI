@@ -14,7 +14,7 @@ private:
   int mrXVisible=-1;
   int turnNumber;
   bool gameEnd=false;
-  //All connected nodes of graph are given below
+  // All connected nodes of graph are given below
     vector<int> l0 =  {1, 35, 36}; 
     vector<int> l1 =  {0, 2, 8};
     vector<int> l2 =  {1, 6, 3, 7};
@@ -174,7 +174,6 @@ private:
       }
   }
 
-  
   void moveDetective() //function which tells us the current and next position of detective and gives us option to select next loaction too
   {
     for(int x=0;x<2;x++)
@@ -280,7 +279,6 @@ private:
     
     return 0;
   }
-  
 };
 int main()
 {   system("Color F0");
